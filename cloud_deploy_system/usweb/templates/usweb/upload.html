@@ -1,0 +1,12 @@
+{% extends "usweb/base.html" %}
+{% block body %}
+<form action="{% url "usweb:upload" %}" method="post" enctype="multipart/form-data" >
+{% csrf_token %}
+  <label for="label1">上传升级包:</label>
+  <input type="file" name="myfile">
+  <input type="submit" value="上传">
+</form>
+{% if upload_success %}
+<p><strong>上传成功</strong></p>
+{% endif %}
+{% endblock %}

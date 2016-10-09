@@ -1,0 +1,43 @@
+{% extends "usweb/base.html" %}
+{% load static from staticfiles %}
+<!-- load staticfiles -->
+{% block body %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+    
+
+<form action="{% url "usweb:upload" %}" method="post" enctype="multipart/form-data" >
+{% csrf_token %}
+      <!-- input type="text" name="name" value="这个是text input">
+      <br>
+      <input type="password" name="pwd" value="123456">
+      <br>
+      <input type="file" name="myfile" >
+      <br>
+      <input type="button" name="mybutton" value="Go Go Go!">
+      <br>
+      a:<input type="checkbox" name="checkit" value="a"><br>
+      b:<input type="checkbox" name="checkit" value="b" checked><br>
+      c:<input type="checkbox" name="checkit" value="c">
+      <br>
+      x:<input type="radio" name="cr" value="x">
+      <br>
+      y:<input type="radio" name="cr" value="y">
+      <br>
+      z:<input type="radio" name="cr" value="z">
+      <br>
+      <input type="image" src="{% static "usweb/images/123.png" %}" name="img" >
+      <br-->
+
+      <label>上传升级包：</label> <input type="file" name=myfile >
+      <br>
+      <input type="submit" name="mysubmit" value="上传" >
+
+</form>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

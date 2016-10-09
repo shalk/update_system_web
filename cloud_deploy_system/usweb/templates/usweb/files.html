@@ -1,0 +1,8 @@
+{% extends "usweb/base.html" %}
+{% block body %}
+<ul>
+{% for file in object_list %}
+  <li> {{ file.path }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

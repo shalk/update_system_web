@@ -1,0 +1,34 @@
+{% extends 'usweb/base.html' %}
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <p class="text-left"><strong>cloudmanager 主机列表 如下</strong></p>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <td>#</td>
+          <td>名称</td>
+          <td>IP</td>
+        </tr>
+      </thead>
+      <tbody>
+      {% if cloudmanager_list %}
+        {% for cm in cloudmanager_list %}
+          <tr>
+            <td>{{ forloop.counter}}</td>
+            <td>{{ cm.name }}</td>
+            <td>{{ cm.ip }}</td>
+          </tr>
+        {% endfor %} 
+      {% else %}
+      <p>there are no  cloudmanager </p>
+      {% endif %} 
+      </tbody>
+    </table>
+      
+    </div>
+  </div>
+</div>
+<h1></h1>
+{% endblock %}
